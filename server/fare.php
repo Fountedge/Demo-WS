@@ -19,6 +19,7 @@ $request = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 	<AirItinerary>
 		<OriginDestinationOptions>
 			<OriginDestinationOption>\n";
+$passengerCount=0;
 
 for ($i=0;$i<$_GET['Segments'];$i++) {
 	
@@ -30,7 +31,7 @@ for ($i=0;$i<$_GET['Segments'];$i++) {
 	$dest = $_GET["ArrivalAirport_$i"];
 	$airline = $_GET["MarketingAirline_$i"];
 	
-
+	$passengerCount= $_GET["PassengerTypeQuantity_$i"];
 	
 	$request .= "\t\t\t\t<FlightSegment   DepartureDateTime=\"$ddatetime\" ArrivalDateTime=\"$adatetime\" FlightNumber=\"$flight\" ResBookDesigCode=\"$class\" >
 					<DepartureAirport LocationCode=\"$source\"/>
@@ -46,7 +47,7 @@ $request .= "\t\t\t</OriginDestinationOption>
 	</AirItinerary>
 <TravelerInfoSummary>
 		<AirTravelerAvail >
-		<PassengerTypeQuantity Code=\"ADT\" Quantity=\"$_POST['passenger']\"/>
+		<PassengerTypeQuantity Code=\"ADT\" Quantity=\"$passengerCount\"/>
 		</AirTravelerAvail>
 	</TravelerInfoSummary>
 </KIU_AirPriceRQ>";
