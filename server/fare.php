@@ -66,6 +66,7 @@ if ($xml->Error) {
 	echo "<b>Error $ErrorCode: $ErrorMsg</b>";
 } else {
 	echo "<pre>";
+
 	foreach ($xml->PricedItineraries->PricedItinerary as $pi) {
 		echo "<b>Fare: </b>" . $pi->AirItineraryPricingInfo->ItinTotalFare->BaseFare['Amount'] . "<br/>";
 		echo "<b>Taxes: </b><br/>";
@@ -75,7 +76,7 @@ if ($xml->Error) {
 		echo "<b>Total: </b>" . $pi->AirItineraryPricingInfo->ItinTotalFare->TotalFare['Amount'];
 	}
 	echo "</pre>";
-	echo '<input type="button" value="Book this Itinerary" onclick="booking();">';
+	echo '<input type="button" value="Book this Itinerary" onclick="booking('.$pi->AirItineraryPricingInfo->PTC_FareBreakdowns->PTC_FareBreakdown->PassengerTypeQuantity['Quantity'] .');">';
 }
 echo "<pre>REQUEST: " . htmlentities(print_r($request, true)) . "<br>" . "RESPONSE: " . htmlentities(print_r($response, true)) . "</pre>";
 

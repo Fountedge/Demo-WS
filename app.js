@@ -244,11 +244,34 @@ function selected_segments_fare() {
 	}
 }
 
-function booking() {
+function booking(quantity) {
+	//alert(quantity);
 	hide('avail_search');
 	hide('avail_result');
 	hide('booking_result'); 
 	hide('buy');
+	
+
+	var text='FirstName:<input type="text" name="FirstName"/> <br/>'+
+		'LastName:<input type="text" name="LastName"/> <br/>'+
+		'Document Type:<select type="text" name="DocType">'+
+		  					'<option value="5">Passport</option>'+
+		  			  '</select>'+
+		  '<br/>'+
+		'Document ID:<input type="text" name="DocID"/> <br/>'+
+		'Telephone:<input type="text" name="Telephone"/> <br/>'+
+		'Email:<input type="text" name="Email"/> <br/> <hr/>';
+
+	var setText='';
+	for(var i=1;i<=quantity;i++){
+		//alert(i);
+		setText = $('#passengerDetails').html() + text;
+		//alert(setText);
+		$('#passengerDetails').html(setText);
+
+	}
+
+
 	show('booking_search');
 }
 

@@ -131,16 +131,12 @@
 	<form action="index.php" name="booking_search_form" onsubmit="return booking_search()">
 	  <fieldset>
 		<legend>Booking:</legend>
+
+		<div id="passengerDetails">
+			
+		</div>
+
 		
-		FirstName:<input type="text" name="FirstName"/> <br/>
-		LastName:<input type="text" name="LastName"/> <br/>
-		Document Type:<select type="text" name="DocType"> 
-		  					<option value="5">Passport</option>
-		  			  </select>
-		  <br/>
-		Document ID:<input type="text" name="DocID"/> <br/>
-		Telephone:<input type="text" name="Telephone"/> <br/>
-		Email:<input type="text" name="Email"/> <br/>
 		<input type="button" value="Back" onclick="booking_back();"/> <input type="button" onclick="booking_submit();" value="Make Reservation"/>
 	  </fieldset>
 	</form>

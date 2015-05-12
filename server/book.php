@@ -19,7 +19,7 @@ $request = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 			<OriginDestinationOption>";
 
 for ($i=0;$i<$_POST['Segments'];$i++) {
-	$passenger = $_POST["PassengerTypeQuantity"];	
+	$passenger = $_POST["PassengerTypeQuantity_$i"];	
 	$ddatetime = $_POST["DepartureDateTime_$i"];
 	$adatetime = $_POST["ArrivalDateTime_$i"];
 	$flight = $_POST["FlightNumber_$i"];
