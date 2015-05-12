@@ -137,7 +137,7 @@
 		</div>
 
 		
-		<input type="button" value="Back" onclick="booking_back();"/> <input type="button" onclick="booking_submit();" value="Make Reservation"/>
+		<input type="button" value="Back" onclick="booking_back(); "/> <input type="button" onclick="booking_submit();" value="Make Reservation"/>
 	  </fieldset>
 	</form>
 </div>

@@ -276,6 +276,7 @@ function booking(quantity) {
 }
 
 function booking_back() {
+	$('#passengerDetails').html(" "); 
 	hide('avail_search'); 
 	hide('booking_search'); 
 	show('avail_result'); 
